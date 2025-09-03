@@ -1,0 +1,60 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.datos-contacto {
+    height: 100%;
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+    p {
+        margin-right: 2rem;
+        margin-left: 0.5rem;
+    }
+    svg {
+        margin-left: 2rem;
+    }
+}
+
+.banner {
+    position: relative;
+    img {
+        width: 100vw;
+    }
+    .logo {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        bottom: -4.5rem;
+        @include m.tablet {
+            bottom: -6.5rem;
+        }
+        @include m.oldDesktop {
+            bottom: -10.5rem;
+        }
+        .log {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: v.$blanco;
+            border-radius: 50%;
+            width: 100px;
+            height: 95px;
+            @include m.tablet {
+                width: 130px;
+                height: 125px;
+            }
+            @include m.oldDesktop {
+                width: 230px;
+                height: 225px;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+    }
+}
