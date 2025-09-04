@@ -695,12 +695,13 @@ class REGISTROPAUTAS extends Master
         $time_cam4,
         $clip_cam5,
         $time_cam5,
+        $vb,
         $obs
     ) {
         $qry = "INSERT INTO registro_pautas (id_hpauta, capitulo, escena, plano, toma, retoma, clip_cam1, time_cam1, clip_cam2, time_cam2, clip_cam3,
          time_cam3, clip_cam4, time_cam4, clip_cam5, time_cam5, vb, obs, estado)
         VALUES ('$id_hpauta', '$capitulo', '$escena', '$plano', '$toma', '$retoma', '$clip_cam1', '$time_cam1', '$clip_cam2', '$time_cam2', '$clip_cam3',
-        '$time_cam3', '$clip_cam4', '$time_cam4', '$clip_cam5', '$time_cam5', null, '$obs', 'A')";
+        '$time_cam3', '$clip_cam4', '$time_cam4', '$clip_cam5', '$time_cam5', '$vb', '$obs', 'A')";
         self::$db->query($qry);
     }
 

@@ -28,7 +28,7 @@ $(function(){
     const celda = $('#menuContextual').data('celda');
     const id = celda.data('id');
 
-    $.post('backend/update_vb.php', { id: id, nuevo_valor: nuevoValor }, function(response){
+    $.post('paginas/backend/update_vb.php', { id: id, nuevo_valor: nuevoValor }, function(response){
       // Actualiza visualmente el contenido
       const nuevoSVG = (nuevoValor == 1)
         ? '<svg fill="green" viewBox="0 0 24 24"><path d="M20.285 6.709a1 1 0 0 0-1.414-1.418l-9.19 9.203-4.55-4.544a1 1 0 1 0-1.414 1.414l5.256 5.25a1 1 0 0 0 1.414 0l9.898-9.905z"/></svg>'

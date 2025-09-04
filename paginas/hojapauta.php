@@ -116,7 +116,7 @@ $sesionSeccionNotas = SESIONES::listarSesionesPorIdentificacorUsuario('5', $id_u
                 </table>
             </div>
             <?php if ($sesionSeccion->estado_sesion == '1') { ?>
-                <a href="registro?hpauta=<?php echo $hpauta; ?>&novela=<?php echo $novela; ?>&indice=<?php echo $indice; ?>&fecha=<?php echo $fecha; ?>&capitulo=<?php echo $capitulo; ?>"><button class="margin-top boton-agregar">+ Agregar Nueva Pauta</button></a>
+                <a href="registro?hpauta=<?php echo $hpauta; ?>&novela=<?php echo $novela; ?>&indice=<?php echo $indice; ?>&fecha=<?php echo $fecha; ?>&capitulo=<?php echo $capitulo; ?>"><button class="margin-top boton-agregar">+ Agregar Registros</button></a>
             <?php }
             if ($registroPautas) { ?>
                 <table class="formulario diseño_tablas">

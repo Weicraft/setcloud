@@ -25,7 +25,7 @@ function css(done) {
         .pipe(sass()) // Compilarlo
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
-        .pipe(dest('paginas/build/css')) // Almacenarla en el disco duro
+        .pipe(dest('build/css')) // Almacenarla en el disco duro
     done();
 }
 
@@ -36,7 +36,7 @@ function versionWebp(done) {
     };
     src('src/img/**/*.{png,jpg}')
         .pipe(webp(opciones))
-        .pipe(dest('paginas/build/img'))
+        .pipe(dest('build/img'))
     done();
 }
 
@@ -46,7 +46,7 @@ function versionAvif(done) {
     };
     src('src/img/**/*.{png,jpg}')
         .pipe(avif(opciones))
-        .pipe(dest('paginas/build/img'))
+        .pipe(dest('build/img'))
     done();
 }
 
@@ -57,7 +57,7 @@ function javascript(done) {
         .pipe(terser())
         .pipe(sourcemaps.write('.'))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('paginas/build/js'));
+        .pipe(dest('build/js'));
 
     done();
 }

@@ -74,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $time_cam4,
         $clip_cam5,
         $time_cam5,
+        $vb,
         $obs
     );
     //Redirigir a lista

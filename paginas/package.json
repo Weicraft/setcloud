@@ -1,10 +1,10 @@
 {
-  "name": "produccion_audiovisual",
+  "name": "Setcloud - Producción Audiovisual",
   "version": "1.0.0",
   "description": "Proyecto piloto",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss:paginas/build/css",
+    "sass": "sass --watch src/scss:build/css",
     "tarea": "gulp tarea",
     "dev": "gulp dev"
   },
