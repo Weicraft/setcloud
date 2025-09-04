@@ -46,9 +46,9 @@ tinymce.init({
   selector: "#editor",
   plugins: "lists link image formatselect code help wordcount textcolor font",
   toolbar:
-    "undo redo | formatselect |bold italic underline forecolor backcolor | fontselect fontsizeselect | bullist numlist outdent indent | removeformat | code",
-  menubar: true,
-
+    "undo redo | formatselect | bold italic underline forecolor backcolor | fontselect fontsizeselect | bullist numlist outdent indent | removeformat | code",
+  menubar: false,
+  statusbar: false,
   // Colores fosforescentes personalizados
   color_map: [
     "ff00ff",
@@ -71,3 +71,28 @@ tinymce.init({
 
   color_cols: 8,
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const botonSalir = document.querySelector(".boton-salir-discreto"); // tu enlace
+  const popup = document.getElementById("popup-confirm");
+  const btnAceptar = document.getElementById("popup-aceptar");
+  const btnCancelar = document.getElementById("popup-cancelar");
+
+  if (botonSalir) {
+    botonSalir.addEventListener("click", (e) => {
+      e.preventDefault(); // evitar que se vaya directo
+      popup.style.display = "flex"; // mostrar popup
+    });
+  }
+
+  // Botón cancelar
+  btnCancelar.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Botón aceptar → redirige al href original del enlace
+  btnAceptar.addEventListener("click", () => {
+    window.location.href = botonSalir.getAttribute("href");
+  });
+});
+

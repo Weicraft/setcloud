@@ -33,6 +33,8 @@ NOVELA::setDB($db);
 $registro_pauta = REGISTROPAUTAS::listarRegistroPautaID($id_registro_pauta);
 $novela = NOVELA::listarNovelaId($novelaEnv);
 $hojaPauta = HOJASPAUTA::listarHojaPautaId($registro_pauta->id_hpauta);
+$regCam4 = REGISTROPAUTAS::listarHpautaCam4($registro_pauta->id_hpauta);
+$regCam5 = REGISTROPAUTAS::listarHpautaCam5($registro_pauta->id_hpauta);
 $editpauta = new REGISTROPAUTAS();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -196,45 +198,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Clip Cam 4:</td>
-                                <td>
-                                    <div class="input">
-                                        <input type="text" class="field" id="clip_cam4" name="clip_cam4" value="<?php echo $registro_pauta->clip_cam4; ?>">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Time Cam 4:</td>
-                                <td>
-                                    <div class="input">
-                                        <input type="text" class="field" id="time_cam4" name="time_cam4" value="<?php echo $registro_pauta->time_cam4; ?>">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Clip Cam 5:</td>
-                                <td>
-                                    <div class="input">
-                                        <input type="text" class="field" id="clip_cam5" name="clip_cam5" value="<?php echo $registro_pauta->clip_cam5; ?>">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Time Cam 5:</td>
-                                <td>
-                                    <div class="input">
-                                        <input type="text" class="field" id="time_cam5" name="time_cam5" value="<?php echo $registro_pauta->time_cam5; ?>">
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php if ($regCam4) { ?>
+                                <tr>
+                                    <td>Clip Cam 4:</td>
+                                    <td>
+                                        <div class="input">
+                                            <input type="text" class="field" id="clip_cam4" name="clip_cam4" value="<?php echo $registro_pauta->clip_cam4; ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Time Cam 4:</td>
+                                    <td>
+                                        <div class="input">
+                                            <input type="text" class="field" id="time_cam4" name="time_cam4" value="<?php echo $registro_pauta->time_cam4; ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php }
+                            if ($regCam5) { ?>
+                                <tr>
+                                    <td>Clip Cam 5:</td>
+                                    <td>
+                                        <div class="input">
+                                            <input type="text" class="field" id="clip_cam5" name="clip_cam5" value="<?php echo $registro_pauta->clip_cam5; ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Time Cam 5:</td>
+                                    <td>
+                                        <div class="input">
+                                            <input type="text" class="field" id="time_cam5" name="time_cam5" value="<?php echo $registro_pauta->time_cam5; ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </table>
                         <table class="margin-top">
                             <td>
                                 <div>Observaciones:</div>
                                 <div class="input">
                                     <textarea id="editor" name="obs" rows="4"><?php echo $registro_pauta->obs; ?></textarea>
-                                                                    </div>
+                                </div>
                             </td>
                         </table>
                         <div class="cont-boton">

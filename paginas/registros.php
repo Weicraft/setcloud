@@ -54,6 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $time_cam2 = $fila[8];
         $clip_cam3 = $fila[9];
         $time_cam3 = $fila[10];
+        $clip_cam4 = '0';
+        $time_cam4 = '0';
+        $clip_cam5 = '0';
+        $time_cam5 = '0';
 
         // Columna VB (✅ = "1", ❌ = "0")
         $vb = isset($fila['VB']) ? $fila['VB'] : null;
@@ -77,10 +81,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $time_cam2,
                 $clip_cam3,
                 $time_cam3,
-                null,
-                null,
-                null,
-                null,
+                $clip_cam4,
+                $time_cam4,
+                $clip_cam5,
+                $time_cam5,
                 $vb,
                 $obs
             );
@@ -171,13 +175,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <div class="flex-simple-center margin-top">
-                    <a class="boton-salir" href="pauta?hpauta=<?php echo $hpauta; ?>&novela=<?php echo $novela; ?>&indice=<?php echo $indice; ?>&fecha=<?php echo $fecha; ?>&capitulo=<?php echo $capitulo; ?>">Salir sin grabar</a>
+                    <a class="boton-salir-discreto" href="pauta?hpauta=<?php echo $hpauta; ?>&novela=<?php echo $novela; ?>&indice=<?php echo $indice; ?>&fecha=<?php echo $fecha; ?>&capitulo=<?php echo $capitulo; ?>">Salir sin grabar</a>
                     <button type="submit" class="boton-grabar big-margin-left">Guardar</button>
                 </div>
             </form>
 
         </div>
     </main>
+    <!-- Popup de confirmación -->
+    <div id="popup-confirm" class="popup-overlay">
+        <div class="popup-content">
+            <h3>¿Está seguro que desea salir sin grabar?</h3>
+            <p class="popup-warning"><strong>Todo lo registrado se perderá.</strong></p>
+            <div class="popup-buttons">
+                <button id="popup-aceptar" class="boton-salir">Aceptar</button>
+                <button id="popup-cancelar" class="boton-grabar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
     <?php
     include 'templates/footer.php';
     ?>

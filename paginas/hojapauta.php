@@ -132,11 +132,11 @@ $sesionSeccionNotas = SESIONES::listarSesionesPorIdentificacorUsuario('5', $id_u
                         <th>Time Cam 2</th>
                         <th>Clip Cam 3</th>
                         <th>Time Cam 3</th>
-                        <?php if ($regCam4) { ?>
+                        <?php if ($regCam4 == '0') { ?>
                             <th>Clip Cam 4</th>
                             <th>Time Cam 4</th>
                         <?php }
-                        if ($regCam5) { ?>
+                        if ($regCam5 == '0') { ?>
                             <th>Clip Cam 5</th>
                             <th>Time Cam 5</th>
                         <?php } ?>
@@ -162,11 +162,11 @@ $sesionSeccionNotas = SESIONES::listarSesionesPorIdentificacorUsuario('5', $id_u
                             <td><?php if ($rpauta->time_cam2 != '0') { echo $rpauta->time_cam2; } else { echo ''; }  ?></td>
                             <td><?php if ($rpauta->clip_cam3 != '0') { echo $rpauta->clip_cam3; } else { echo ''; }  ?></td>
                             <td><?php if ($rpauta->time_cam3 != '0') { echo $rpauta->time_cam3; } else { echo ''; } ?></td>
-                            <?php if ($regCam4) { ?>
+                            <?php if ($regCam4 == '0') { ?>
                                 <td><?php if ($rpauta->clip_cam4 != '0') { echo $rpauta->clip_cam4; } else { echo ''; }  ?></td>
                                 <td><?php if ($rpauta->time_cam4 != '0') { echo $rpauta->time_cam4; } else { echo ''; }  ?></td>
                             <?php }
-                            if ($regCam5) { ?>
+                            if ($regCam5 == '0') { ?>
                                 <td><?php if ($rpauta->clip_cam5 != '0') { echo $rpauta->clip_cam5; } else { echo ''; }  ?></td>
                                 <td><?php if ($rpauta->time_cam5 != '0') { echo $rpauta->time_cam5; } else { echo ''; }  ?></td>
                             <?php } ?>
